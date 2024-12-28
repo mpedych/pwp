@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Personal web page</title>
+</head>
+<body>
+<div>
+    <h1 style="display:inline;">Maksym Pedych (EN) <span><i class="fa fa-volume-up fa-2x"
+                                                            style="color:black;opacity:.5;font-size:32px"></i></span> /
+        Максим Педич (UKR)</h1>
+</div>
+<audio hidden>
+    <source src="../static/name.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<p th:text="|Hello, ${name}!|"/>
+
+<p>Last update: October 1, 2024;</p>
+
+<p></p>
+
+<ul>
+    <li>Specialization: Java Backend;</li>
+    <li>Location: <a href="https://maps.app.goo.gl/qFxQns4yfSPKjyqM8">Ukraine -&gt; Kamianets-Podilskyi</a>;</li>
+    <li>Time Zone: <a href="https://www.timeanddate.com/time/zone/ukraine">EET/EEST&nbsp;</a>;</li>
+    <li>Gmail: <a href="mailto:maksym.pedych@gmail.com">maksym.pedych@gmail.com</a>;</li>
+    <li><a href="https://drive.google.com/drive/folders/19msTMxDHOUEyIx5439HUlsbuVpDoB0-9?usp=sharing">Public
+        Folder;</a></li>
+    <li><a href="https://docs.google.com/document/d/16hLbDd9Is0HqnbJisiEvALyvM50AqmprmE0OMw5sgbk/edit?usp=sharing">Resume</a>;
+    </li>
+    <li><a href="https://www.linkedin.com/in/mpedych">LinkedIn</a>;</li>
+    <li><a href="https://mpedych.github.io">Blog</a>;</li>
+    <li><a href="https://github.com/mpedych">GitHub</a>.</li>
+</ul>
+
+<p>Regards!</p>
+
+<script>
+    let a=0;
+
+    document.getElementsByTagName("i")[0].addEventListener("click",function(){
+        if(a==0){
+            setTimeout(2000);
+            document.getElementsByTagName("audio")[0].play();
+            a++;
+            document.querySelector("i").style.opacity="1";
+        }else{
+            document.querySelector("audio").pause();
+            a--;
+            document.querySelector("i").style.opacity=".5";
+        }
+    }
+    );
+</script>
+</body>
+</html>
